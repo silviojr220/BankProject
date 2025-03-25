@@ -2,14 +2,18 @@
 //Os modulos são definidos por cada arquivo presente. Usando o "export" o arquivo com a classe que presente nele, ficara disponivel para uso em outros arquivos, mas apenas nos que forem utilizados.
 export class ContaCorrente {
     agencia;
+    cliente;
+
+    
     _saldo = 0;
+
 
     sacar(valor) {
         if (this._saldo >= valor) {
             this._saldo -= valor;
             return valor;
         }
-    }
+}
 
     depositar(valor) {
         if (valor <= 0) {
