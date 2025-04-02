@@ -23,7 +23,7 @@ console.log(conta1._saldo);
 const conta2 = new ContaCorrente();
 conta2.agencia = 1200;
 conta2.cliente = cliente2;
-console.log(conta2);
+console.log(conta2._saldo);
 
 //--Desposito--
 conta1.depositar(200);
@@ -34,6 +34,16 @@ let valorSacado = conta1.sacar(100);
 console.log(valorSacado);
 valorSacado = conta1.sacar(50);
 console.log(conta1._saldo);
+
+// --Transferencia--
+conta1.depositar(500);
+conta1.transferir(200, conta2);
+console.log(conta1._saldo);
+
+conta2.sacar(100);
+conta2.depositar(1000);
+conta2.transferir(500, conta1);
+console.log(conta2._saldo);
 
 //--Geral_Cliente--
 console.log(conta1);
