@@ -32,7 +32,7 @@ export class ContaCorrente {
 
         if (this._saldo >= valor) {
             this._saldo -= valor;
-            console.log(`Foi efetuado um saque de ${valor}. Seu saldo é: ${this._saldo} ${this._saldo === 1 ? "real" : "reais"}`);
+            console.log(`Na conta de ${this.cliente.nome}efetuado um saque de ${valor}. Seu saldo é: ${this._saldo} ${this._saldo === 1 ? "real" : "reais"}`);
             return valor;
         }else {
             console.log(`Saldo insuficiente!`)
@@ -45,7 +45,7 @@ export class ContaCorrente {
             return;
         }
         this._saldo += valor;
-        console.log(`Foi feito um deposito de ${valor} ${valor === 1 ? "real" : "reais"}. Seu novo saldo é: ${this._saldo} ${this._saldo === 1 ? "real" : "reais"}`);
+        console.log(`Na conta de ${this.cliente.nome} feito um deposito de ${valor} ${valor === 1 ? "real" : "reais"}. Seu novo saldo é: ${this._saldo} ${this._saldo === 1 ? "real" : "reais"}`);
     }
 
     // --Transferencia--
@@ -53,8 +53,7 @@ export class ContaCorrente {
         conta.cidade = "São Paulo";
         const valorSacado = this.sacar(valor);
         conta.depositar(valorSacado);
-
-        console.log(`${this.cliente} vez um transferencia de ${valor} para ${this.cliente}`);
+        console.log(`${this.cliente.nome} vez um transferencia de ${valor} para ${conta.cliente.nome}`);
     }
 
 }

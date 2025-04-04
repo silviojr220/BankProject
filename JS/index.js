@@ -35,8 +35,34 @@ conta2.depositar(1000);
 conta2.transferir(500, conta1);
 
 //--Geral_Cliente--
-console.log(conta1);
-console.log(conta2);
+console.table(conta1);
+console.table(conta2);
+
+//--Mostrar na página--
+const container = document.getElementById('dados');
+
+function mostrarDados(dados) {
+    container.innerHTML += dados;
+}
+
+mostrarDados(`Nome: ${conta1._cliente.nome}`);
+mostrarDados(`<br>CPF: ${conta1._cliente._cpf}`);
+mostrarDados(`<br>Agencia: ${conta1.agencia}`);
+mostrarDados(`<br>Saldo: ${conta1.saldo}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -58,4 +84,3 @@ console.log(conta2);
 // variavel.propriedade = A;
 
 // variavel.mudar(B);
-
